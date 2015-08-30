@@ -1,0 +1,97 @@
+#include "../Src/feditRsc.h"
+
+FORM FormMain 0 0 160 160
+NOFRAME
+MENUID 9000
+BEGIN
+    TITLE "Font Editor"
+	
+	BUTTON "-" ButtonDecX AT ( 68 1 10 10 ) 
+	FIELD ID FieldXSize AT ( PREVRIGHT+1 PREVTOP 10 15 )
+		NONEDITABLE	SINGLELINE UNDERLINED NUMERIC MAXCHARS 3
+	BUTTON "+" ButtonIncX AT ( PREVRIGHT+1 PREVTOP 10 10 ) 
+	BUTTON "-" ButtonDecGlyph AT ( PREVRIGHT+5 PREVTOP 10 10 ) 
+	FIELD ID FieldGlyphNum AT ( PREVRIGHT+1 PREVTOP 20 15 )
+		NONEDITABLE	SINGLELINE UNDERLINED NUMERIC MAXCHARS 3
+	BUTTON "+" ButtonIncGlyph AT ( PREVRIGHT+1 PREVTOP 10 10 ) 
+	BUTTON "" ButtonDrawMode AT ( 149 0 11 11 )
+		NOFRAME GRAPHICAL BITMAPID BitmapDraw
+
+	GADGET ID GadgetPixels AT ( 0 18 140 140 )
+END
+
+FORM ID FormSave 2 90 156 68
+FRAME
+MODAL
+BEGIN
+	TITLE "Save Font"
+	BUTTON "Save" ButtonSaveSave AT ( PREVLEFT+5 PREVHEIGHT-14 AUTO AUTO )
+	BUTTON "Cancel" ButtonSaveCancel AT ( PREVRIGHT+5 PREVTOP AUTO AUTO )
+	LABEL "Name :" ID LabelSaveName AT ( 5 18 )
+	FIELD ID FieldSaveName AT ( PREVRIGHT+4 PREVTOP 100 15 )
+		SINGLELINE UNDERLINED MAXCHARS 24
+	LABEL "Slot :" ID LabelSaveSlot AT ( 5 PREVTOP+18 )
+	FIELD ID FieldSaveSlot AT ( PREVRIGHT+4 PREVTOP 10 15 )
+		SINGLELINE UNDERLINED MAXCHARS 1
+END
+
+BITMAP ID BitmapDraw	"draw.bmp"
+BITMAP ID BitmapErase	"erase.bmp"
+BITMAP ID BitmapSmart	"smart.bmp"
+
+ALERT ID AlertAbout INFORMATION
+BEGIN
+	TITLE "About FEdit"
+	MESSAGE "FEdit is a font editor program for the Palm Platform. "\
+			"It is free under the GNU GPL."\
+			"(http://www.gnu.org)\n"\
+			"Author:\nPanayotis Katsaloulis\npanayotis@panayotis.com"
+	BUTTONS "OK"
+END
+
+
+ALERT ID AlertConfirm CONFIRMATION
+DEFAULTBUTTON 1
+BEGIN
+	TITLE "FEdit confirmation"
+	MESSAGE "^1"
+	BUTTONS "OK" "Cancel"
+END
+
+ALERT ID AlertMessage INFORMATION
+BEGIN
+	TITLE "F Y I"
+	MESSAGE "^1"
+	BUTTONS "OK"
+END
+
+MENU ID 9000
+BEGIN
+	PULLDOWN "Project"
+	BEGIN
+		MENUITEM "New"   ID MenuNew   "N"
+		MENUITEM "Save"  ID MenuSave  "S"
+/*		MENUITEM "Load"  ID MenuLoad  "L"
+		MENUITEM SEPARATOR
+		MENUITEM "Info"  ID MenuInfo  "I"
+		MENUITEM "Test"  ID MenuTest  "T"
+		MENUITEM SEPARATOR				*/
+		MENUITEM "About" ID MenuAbout "A"
+	END
+	PULLDOWN "Edit"
+	BEGIN
+		MENUITEM "Copy"    ID MenuCopy    "C"
+		MENUITEM "Paste"   ID MenuPaste   "V"
+		MENUITEM "Delete"  ID MenuDelete  "D"
+		MENUITEM SEPARATOR
+		MENUITEM "Reverse" ID MenuReverse "R"
+	END
+END
+
+
+APPLICATIONICONNAME 1000 "FEdit"
+ICONFAMILY "fed1.bmp" "fed2.bmp"
+
+SMALLICONFAMILY "feds1.bmp" "feds2.bmp"
+
+VERSION 1 "1.0.0"

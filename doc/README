@@ -1,0 +1,67 @@
+Warning!
+The program is still in early alpha stage and is highly possible
+that it would make your palm unstable. Think twice before
+installing the binary to a real palm.
+
+
+This is a minimal read me file for the FEdit application
+for the Palm OS platform.
+
+You can directly install the application into the palm, using
+the provided prc file.
+
+The left number on the screen is the width of the current font
+and the left is the current ASCII character being edited.
+
+The right icon displays the current drawing mode:
+1) Draw
+2) Erase
+3) Smart draw: if the first square was filled, is used as an
+   eraser, or else as a drawing pen.
+
+
+You can save the font giving it any name you like. The "slot"
+represents a unique character for every unique font, that is
+desired to appear simultaneously. Special care has been taken
+in order the program to be compatible with the FontHack123
+hack.
+
+
+
+Known bugs & limitations:
+=========================
+
+- The last character is not saved. To save it simply navigate to
+  the next chracter (which becomes the current "last" character).
+
+- The font is always saved as fixed size (?)
+
+- The default height of the font is not able to change (although
+  it is possible to recompile the source code and alter the
+  default height)
+
+
+Future issues:
+==============
+
+- Create dialog to define the desired default height
+
+- Display the new character on screen (real time) with it's real
+  height
+
+- Display the original character on screen
+
+- Buttons to move the glyph to all 4 directions
+
+- Test screen with all the drawn fonts
+
+- Load font from memory
+
+
+
+Contact Address:
+================
+
+Panayotis Katsaloulis
+
+panayotis@panayotis.com
