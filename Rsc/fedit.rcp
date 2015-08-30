@@ -45,7 +45,7 @@ BEGIN
 	MESSAGE "FEdit is a font editor program for the Palm Platform. "\
 			"It is free under the GNU GPL."\
 			"(http://www.gnu.org)\n"\
-			"Author:\nPanayotis Katsaloulis\npanayotis@panayotis.com"
+			"Author:\nPanayotis Katsaloulis\nhttp://www.panayotis.com"
 	BUTTONS "OK"
 END
 
